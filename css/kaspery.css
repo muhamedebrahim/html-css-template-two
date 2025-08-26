@@ -283,7 +283,7 @@ header nav .form {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(0 0 0 / 60%);
+  background-color: rgb(0 0 0 / 50%);
 }
 .design .image,
 .design .text {
@@ -300,10 +300,10 @@ header nav .form {
   bottom: -150px;
 }
 
-.design .text{
-    color: white;
-    background-color: var(--transparent-color);
-    padding: 50px;
+.design .text {
+  color: white;
+  background-color: var(--transparent-color);
+  padding: 50px;
 }
 .design .text h2 {
   font-weight: normal;
@@ -325,8 +325,66 @@ header nav .form {
 /* End Design */
 
 /* Start Portfolio */
-.portfolio{
-    padding-top: var(--section-padding);
-    padding-bottom: var(--section-padding);
+.portfolio {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.portfolio ul.shuffle {
+  display: flex;
+  justify-content: center;
+}
+.portfolio ul.shuffle li {
+  padding: 10px;
+}
+.portfolio ul.shuffle li.active {
+  background-color: var(--main-color);
+  color: white;
+}
+
+.portfolio .imgs-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+.portfolio .imgs-container .box {
+  overflow: hidden;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .portfolio .imgs-container .box {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 1199px) {
+  .portfolio .imgs-container .box {
+    flex-basis: 25%;
+  }
+}
+.portfolio .imgs-container .box img{
+    max-width: 100%;
+    transition: 0.3s;
+}
+.portfolio .imgs-container .box:hover img {
+  transform: rotate(3deg) scale(1.1);
+}
+.portfolio .imgs-container .box .caption {
+  position: absolute;
+  left: 0;
+  padding: 20px;
+  background-color: white;
+  width: 100%;
+  transition: 0.3s;
+  bottom: -100%;
+}
+.portfolio .imgs-container .box:hover .caption {
+  bottom: 0;
+}
+.portfolio .imgs-container .box .caption h4 {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.portfolio .imgs-container .box .caption p {
+  color: var(--main-color);
 }
 /* End Portfolio */
